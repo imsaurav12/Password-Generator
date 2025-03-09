@@ -3,7 +3,8 @@
 //git push origin main
 
 // jahan jahan kaam karna hai usko pahle le aao yahan/to keep in mind-- wrong tarika 
-const inputSlider = document.querySelector("[data-lengthSlider]"); //To fetch custom attribute --> "[custom-attribute]"
+//To fetch custom attribute --> "[custom-attribute]"
+const inputSlider = document.querySelector("[data-lengthSlider]"); 
 const lengthDisplay = document.querySelector("[data-lengthNumber]");
 const passwordDisplay = document.querySelector("[data-PasswordDisplay]");
 const copyBtn = document.querySelector("[data-copy]");
@@ -124,7 +125,9 @@ allCheckBox.forEach((checkbox) => {
 
 //slider slide krne pr kya hoga
 inputSlider.addEventListener("input", (e) => {
-    passwordLength = e.target.value;
+    // e.target refers to the element that triggered the event (inputSlider).
+//.value gets the current value of the slider.
+    passwordLength = e.target.value; // jab bhi event hota hai uske sath bahot sara information render hota h,
     handleSlider();
 });
 
