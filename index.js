@@ -1,3 +1,7 @@
+//git add .
+//git commit -m "Updated files"
+//git push origin main
+
 // jahan jahan kaam karna hai usko pahle le aao yahan/to keep in mind-- wrong tarika 
 const inputSlider = document.querySelector("[data-lengthSlider]"); //To fetch custom attribute --> "[custom-attribute]"
 const lengthDisplay = document.querySelector("[data-lengthNumber]");
@@ -85,12 +89,18 @@ async function copyContent() {
 
 //shuffle code-->
 function shufflePassword(array) {
-    //Fisher Yates Method-->
+    //Fisher Yates Method
     for (let i = array.length - 1; i > 0; i--) {
+        //random J, find out using random function
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array.join("");
+        //swap number at i index and j index
+        const temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    let str = "";
+    array.forEach((el) => (str += el));
+    return str;
 }
 
 //jab v change hoga tick/untick, ye function suru se check krega kitna box checked h
