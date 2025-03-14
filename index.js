@@ -155,13 +155,16 @@ generateBtn.addEventListener("click", () => {
     if (symbolsCheck.checked) funcArr.push(generateSymbols);
 
     //compulsory addition
-    funcArr.forEach(func => password += func());
-    console.log("Compulsory Addition Done");
+    // funcArr.forEach(func => password += func()); OR
+    for(let i = 0; i < funcArr.length;i++){
+        password += funcArr[i]();
+    }
+    // console.log("Compulsory Addition Done");
     
     //remaining addition 
     for (let i = 0; i < passwordLength - funcArr.length; i++) {
         let randIndex = getRndInteger(0, funcArr.length);
-        console.log("randIndex" + randIndex);
+        // console.log("randIndex" + randIndex);
         password += funcArr[randIndex]();
     }
     console.log("Remaining addition done");
